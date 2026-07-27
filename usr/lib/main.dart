@@ -57,45 +57,52 @@ class HomeScreen extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 16),
-                    LayoutBuilder(
-                      builder: (context, constraints) {
-                        int crossAxisCount = constraints.maxWidth < 600 ? 1 : 2;
-                        
-                        return GridView.count(
-                          crossAxisCount: crossAxisCount,
-                          shrinkWrap: true,
-                          physics: const NeverScrollableScrollPhysics(),
-                          mainAxisSpacing: 16.0,
-                          crossAxisSpacing: 16.0,
-                          childAspectRatio: constraints.maxWidth < 600 ? 1.2 : 1.1,
-                          children: const [
-                            TopicCard(
-                              title: 'Konsep Ekologi',
-                              icon: Icons.eco,
-                              description:
-                                  'Ekologi adalah ilmu yang mempelajari interaksi antara organisme dengan lingkungannya. Dalam konteks pelayanan publik, pemahaman ekologi memastikan pembangunan berkelanjutan dan pengelolaan sumber daya yang bijak.',
-                            ),
-                            TopicCard(
-                              title: 'Model Pentahelix',
-                              icon: Icons.hub,
-                              description:
-                                  'Model kolaborasi inovatif yang melibatkan lima unsur utama: Pemerintah (Government), Akademisi (Academia), Pelaku Usaha (Business), Masyarakat (Community), dan Media.',
-                            ),
-                            TopicCard(
-                              title: 'Sinergi Pelayanan Publik',
-                              icon: Icons.handshake,
-                              description:
-                                  'Pelayanan publik berwawasan ekologi membutuhkan kolaborasi. Pemerintah membuat kebijakan, akademisi meriset, bisnis berinvestasi, masyarakat berpartisipasi, dan media mengedukasi.',
-                            ),
-                            TopicCard(
-                              title: 'Contoh Implementasi',
-                              icon: Icons.lightbulb,
-                              description:
-                                  '• Pengelolaan sampah terpadu berbasis masyarakat\n• Transportasi publik rendah emisi\n• Pengembangan ruang terbuka hijau\n• Sistem mitigasi bencana kolaboratif',
-                            ),
-                          ],
-                        );
-                      },
+                    ListView(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      children: const [
+                        TopicCard(
+                          title: '1. Konsep Dasar Ekologi',
+                          icon: Icons.eco,
+                          description:
+                              'Ekologi adalah ilmu yang mempelajari interaksi timbal balik antara makhluk hidup dengan lingkungannya. Dalam konteks tata kelola pemerintahan dan pelayanan publik, ekologi memegang peran krusial. Pembangunan tidak lagi hanya mengejar pertumbuhan ekonomi, namun harus mempertimbangkan daya dukung lingkungan (carrying capacity) dan keberlanjutan (sustainability). Jika ekologi diabaikan, akan timbul eksternalitas negatif seperti krisis air bersih, polusi udara, hingga bencana alam yang pada akhirnya akan merusak kualitas pelayanan publik itu sendiri.',
+                        ),
+                        SizedBox(height: 16),
+                        TopicCard(
+                          title: '2. Model Pentahelix (Lima Pilar Kolaborasi)',
+                          icon: Icons.hub,
+                          description:
+                              'Pentahelix adalah model kolaborasi yang menggabungkan lima unsur untuk mencapai tujuan bersama:\n\n'
+                              '• Pemerintah (Government): Bertindak sebagai pembuat kebijakan, regulator, dan fasilitator. Pemerintah memastikan kerangka hukum mendukung pelayanan publik yang ramah lingkungan.\n'
+                              '• Akademisi (Academia): Berperan sebagai konseptor dan peneliti. Memberikan kajian ilmiah, teknologi baru, serta inovasi tata kelola yang ramah lingkungan.\n'
+                              '• Dunia Usaha (Business): Bertindak sebagai katalisator ekonomi. Melalui investasi, teknologi hijau (green tech), dan program CSR, sektor swasta turut membangun infrastruktur pelayanan publik.\n'
+                              '• Masyarakat/Komunitas (Community): Merupakan akselerator dan pengguna langsung (end-user). Kesadaran dan partisipasi aktif masyarakat sangat menentukan keberhasilan program publik.\n'
+                              '• Media (Media): Sebagai expander dan komunikator. Media berperan mengedukasi publik, menyebarkan informasi, dan mengawasi jalannya pelayanan publik.',
+                        ),
+                        SizedBox(height: 16),
+                        TopicCard(
+                          title: '3. Sinergi Ekologi dan Pentahelix untuk Pelayanan Publik',
+                          icon: Icons.handshake,
+                          description:
+                              'Pelayanan publik tidak bisa hanya diselesaikan oleh pemerintah saja. Pendekatan Pentahelix memungkinkan pembagian peran yang proporsional. Misalnya, dalam menghadapi masalah sampah perkotaan:\n\n'
+                              '- Pemerintah menerbitkan Perda tentang pengelolaan sampah dan membangun TPA.\n'
+                              '- Akademisi menciptakan inovasi alat daur ulang atau sistem biodigester.\n'
+                              '- Dunia Usaha mendanai fasilitas pengolahan sampah dan membeli produk daur ulang.\n'
+                              '- Komunitas/Masyarakat secara aktif memilah sampah dari rumah tangga (Bank Sampah).\n'
+                              '- Media mengampanyekan gaya hidup minim sampah (zero waste) secara masif.',
+                        ),
+                        SizedBox(height: 16),
+                        TopicCard(
+                          title: '4. Kesimpulan & Studi Kasus Implementasi',
+                          icon: Icons.lightbulb,
+                          description:
+                              'Implementasi model Pentahelix berbasis ekologi telah terbukti sukses di berbagai program pelayanan publik, antara lain:\n\n'
+                              '1. Penataan Ruang Terbuka Hijau (RTH): Kolaborasi pemkot, arsitek lanskap kampus, CSR perusahaan, komunitas pecinta lingkungan, dan promosi media pariwisata.\n'
+                              '2. Transisi Transportasi Publik Rendah Emisi: Pengadaan bus listrik (pemerintah & swasta), riset baterai (akademisi), adopsi oleh warga (komunitas), dan sosialisasi rute (media).\n'
+                              '3. Mitigasi Bencana Banjir: Sistem peringatan dini kolaboratif, normalisasi sungai, dan edukasi warga.\n\n'
+                              'Dengan menyinergikan lima pilar tersebut, pelayanan publik yang adaptif dan ramah ekologi dapat terwujud secara efektif dan berkelanjutan.',
+                        ),
+                      ],
                     ),
                     const SizedBox(height: 32),
                     const FooterSection(),
